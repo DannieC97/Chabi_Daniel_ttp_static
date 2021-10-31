@@ -10,13 +10,32 @@
 
 <body>
     
-  <h1 style="font-weight: bold">Hello my name is Daniel Chabi, My favoirte hobbies are playing games and also socializing with my friends.
+  <h1 style="font-weight: bold">Hello my name is Daniel Chabi, My favoirte hobbies are playing games and also socializing with my friends. The current time is <span id="time_span"></span>
   </h1>
     
 </body>
 
 
-
+<script>
+    
+    function updateTime(){
+    var currentTime = new Date()
+    var hours = currentTime.getHours()
+    var minutes = currentTime.getMinutes()
+    if (minutes < 10){
+        minutes = "0" + minutes
+    }
+    var t_str = hours + ":" + minutes + " ";
+    if(hours > 11){
+        t_str += "PM";
+    } else {
+        t_str += "AM";
+    }
+    document.getElementById('time_span').innerHTML = t_str;
+}
+setInterval(updateTime, 1000);
+    
+    </script>
 
 
 
