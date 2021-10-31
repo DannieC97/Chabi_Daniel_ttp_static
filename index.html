@@ -29,6 +29,9 @@
     if (seconds < 10){
         seconds = "0" + seconds
     }
+    if (hours > 12){
+        hours = hours - 12;
+    }
     var time = hours + ":" + minutes + ":" + seconds + " ";
     
     document.getElementById('time_span').innerHTML = time;
